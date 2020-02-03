@@ -89,7 +89,7 @@ class FilesystemStorage implements ChunkStorageInterface
         // the file is only renamed before it is uploaded
         if ($renameChunk) {
             // create an file to meet interface restrictions
-            $assembled = new FilesystemFile(new UploadedFile($assembled->getPathname(), $assembled->getBasename(), null, $assembled->getSize(), null, true));
+            $assembled = new FilesystemFile(new UploadedFile($assembled->getPathname(), $assembled->getBasename(), null, $assembled->getSize(), true));
         }
 
         return $assembled;
