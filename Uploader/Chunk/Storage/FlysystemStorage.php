@@ -139,6 +139,9 @@ class FlysystemStorage implements ChunkStorageInterface
 
     public function getChunks($uuid)
     {
+        // Prevent path traversal attacks
+        $uuid = basename($uuid);
+
         return $this->filesystem->listFiles($this->prefix.'/'.$uuid);
     }
 
